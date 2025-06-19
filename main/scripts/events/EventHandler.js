@@ -19,7 +19,7 @@ export class EventHandler {
     // console.log("Current page:", currentPage);
 
     switch (true) {
-      case currentPage.includes("index.html"):
+      case currentPage.includes("index.html") || currentPage == "/" || currentPage == "":
         // console.log("Initializing BookEventHandler...");
         this.loadBookData();
         const bookEventHandler = new BookEventHandler();
