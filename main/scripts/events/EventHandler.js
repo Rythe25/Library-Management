@@ -10,7 +10,6 @@ export class EventHandler {
   constructor() {
     document.addEventListener('DOMContentLoaded', () => {
       this.initialize();
-      this.loadBookData();
     });
   }
 
@@ -20,10 +19,10 @@ export class EventHandler {
     // console.log("Current page:", currentPage);
 
     switch (true) {
-      // case currentPage.includes("index.html"):
-      //   // console.log("Initializing BookEventHandler...");
-      //   this.loadBookData();
-      //   break;
+      case currentPage.includes("index.html"):
+        // console.log("Initializing BookEventHandler...");
+        this.loadBookData();
+        break;
       case currentPage.includes("visitor.html"):
         // console.log("Initializing VisitorEventHandler...");
         this.loadVisitorData();
@@ -123,6 +122,7 @@ export class EventHandler {
 
     cardEventHandler.loadCardTableData();
     // console.log("All cards:", cardManager.getAllCards());
-
   }
+
+  
 }

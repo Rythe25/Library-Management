@@ -1,7 +1,6 @@
 import { CardManager } from './CardManager.js';
 import { BookManager } from './BookManager.js';
-import { VisitorManager } from './VisitorManager.js'; // Assuming this exists similarly to BookManager
-
+import { VisitorManager } from './VisitorManager.js';
 export class StatisticManager {
     constructor() {
         this.cardManager = CardManager.getInstance();
