@@ -8,7 +8,7 @@ import { StatisticEventHandler } from "./StatisticEventHandler.js";
 
 export class EventHandler {
   constructor() {
-      this.initialize();
+    document.addEventListener('DOMContentLoaded', () => {this.initialize();});
   }
 
   initialize() {
@@ -18,7 +18,7 @@ export class EventHandler {
 
     switch (true) {
       case currentPage.includes("index.html"):
-        // console.log("Initializing BookEventHandler...");
+        console.log("Initializing BookEventHandler...");
         this.loadBookData();
         break;
       case currentPage.includes("visitor.html"):
