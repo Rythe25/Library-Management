@@ -39,7 +39,7 @@ export class StatisticEventHandler {
             row.innerHTML = `
                 <td>${visitor.id}</td>
                 <td>${visitor.name}</td>
-                <td>${visitor.phone}</td>
+                <td class="td-phone">${visitor.phone}</td>
             `;
             tableBody.appendChild(row);
         });
