@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Books</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title title-color">LIBRARY</h1>
+            <nav class="nav-items">
+                <a href="#">Books</a>
+                <a href="visitor.html">Visitors</a>
+                <a href="card.html">Cards</a>
+                <a href="statistic.html">Statistics</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="main-container">
+                <div class="main-header">
+                    <div class="main-header-top">
+                        <h4 class="title-color">ALL BOOKS:</h4>
+                        <button class="button-style" id="new-book-button">New Book</button>
+                    </div>
+                    <hr>
+                    <div class="main-header-bottom">
+                        <div class="main-header-item-left">
+                            <label for="sort">Sort by: </label>
+                            <select class="select-style" name="sort" id="sort-column">
+                                <option value="id">ID</option>
+                                <option value="name">Name</option>
+                                <option value="author">Author</option>
+                                <option value="publisher">Publisher</option>
+                                <option value="publish">Publish</option>
+                                <option value="pages">Pages</option>
+                                <option value="copies">Copies</option>
+                            </select>
+                            <button class="button-style" id="sort-button">Sort</button>
+                        </div>
+                        <div class="main-header-item-right">
+                            <label for="">Search: </label>
+                            <input class="input-style" type="text" id="search-input">
+                            <button class="button-style" id="search-button">Search</button>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="main-body-container">
+                    <table>
+                        <thead>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Author</th>
+                            <th>Publisher</th>
+                            <th>Publish</th>
+                            <th>Pages</th>
+                            <th>Copies</th>
+                            <th>Edit</th>
+                        </thead>
+                        <tbody class="book-table-body">
+                            <!-- <tr>
+                                <td>1</td>
+                                <td>BookName</td>
+                                <td>AuthorName</td>
+                                <td>Publisher</td>
+                                <td>Publish</td>
+                                <td>Pages</td>
+                                <td>Copies</td>
+                                <td>
+                                    <button class="edit-buttons-style">
+                                        <img class="button-icons-style" src="icon/pencil.png" alt="Edit">
+                                    </button>
+                                    <button class="edit-buttons-style">
+                                        <img class="button-icons-style" src="icon/trash-xmark.png" alt="Edit">
+                                    </button>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </main>
+
+        <div id="add-pop-up" class="pop-up">
+            <form class="pop-up-container">
+                <h1>New Book</h1>
+                <div id="add-pop-up-inputs" class="pop-up-top">
+                    <label for="Book">Book : </label>
+                    <input class="input-style" name="Book" type="text" id="new-book">
+                    <label for="Author">Author : </label>
+                    <input class="input-style" name="Author" type="text" id ="new-author">
+                    <label for="Publisher">Publisher : </label>
+                    <input class="input-style" name="Publisher" type="text" id="new-publisher">
+                    <label for="Publisher">Publish Year: </label>
+                    <input class="input-style" name="Publish" type="number" id="new-publish">
+                    <label for="Pages">Pages : </label>
+                    <input class="input-style" name="Pages" type="number" id="new-pages">
+                    <label for="Copies">Copies : </label>
+                    <input class="input-style" name="Copies" type="number" id="new-copies">
+                </div>
+                <div class="pop-up-bottom">
+                    <button class="button-style" id="new-cancel-button">Cancel</button>
+                    <button class="button-style" id="new-create-button">Create</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="edit-pop-up" class="pop-up">
+            <div class="pop-up-container">
+                <h1>Edit Book</h1>
+                <div id="edit-pop-up-inputs" class="pop-up-top">
+                    <label for="Book">Book : </label>
+                    <input class="input-style" name="Book" type="text" id="edit-book">
+                    <label for="Author">Author : </label>
+                    <input class="input-style" name="Author" type="text" id="edit-author">
+                    <label for="Publisher">Publisher : </label>
+                    <input class="input-style" name="Publisher" type="text" id="edit-publisher">
+                    <label for="Publisher">Publish Year: </label>
+                    <input class="input-style" name="Publish" type="number" id="edit-publish">
+                    <label for="Pages">Pages : </label>
+                    <input class="input-style" name="Pages" type="number" id="edit-pages">
+                    <label for="Copies">Copies : </label>
+                    <input class="input-style" name="Copies" type="number" id="edit-copies">
+                </div>
+                <div class="pop-up-bottom">
+                    <button class="button-style" id="edit-cancel-button">Cancel</button>
+                    <button class="button-style" id="edit-confirm-button">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        import { EventHandler } from './scripts/events/EventHandler.js';
+        new EventHandler();
+    </script>
+</body>
+</html>

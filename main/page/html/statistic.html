@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/statistic.css">
+    <title>Statistics</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title title-color">LIBRARY</h1>
+            <nav class="nav-items">
+                <a href="index.html">Books</a>
+                <a href="visitor.html">Visitors</a>
+                <a href="card.html">Cards</a>
+                <a href="#">Statistics</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="main-container">
+                <!-- <div class="main-header">
+                    <div class="main-header-top">
+                        <h3 class="title-color">Statistics:</h3>
+                    </div>
+                    <hr>
+                </div> -->
+
+                <div class="main-header-top">
+                    <h4 class="title-color">Top 5 Books:</h4>
+                </div>
+                <form class="book-container">
+                    <table>
+                        <thead>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Author</th>
+                            <th>Publisher</th>
+                            <th>Publish</th>
+                            <th>Pages</th>
+                            <th>Copies</th>
+                        </thead>
+                        <tbody class="book-table-body">
+                            <!-- <tr>
+                                <td>1</td>
+                                <td>BookName</td>
+                                <td>AuthorName</td>
+                                <td>Publisher</td>
+                                <td>Publish</td>
+                                <td>Pages</td>
+                                <td>Copies</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </form>
+                <br>
+                <div class="main-header-top">
+                    <h4 class="title-color">Top 5 Visitors:</h4>
+                </div>
+                <form class="main-body-container">
+                    <table class="visitor-table">
+                        <thead>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th class="th-phone">Phone Number</th>
+                        </thead>
+                        <tbody class="visitor-table-body">
+                            <!-- <tr>
+                                <td>1</td>
+                                <td>Visitor</td>
+                                <td class="th-phone">Phone Number</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </main> 
+    </div>
+    <script type="module">
+        import { EventHandler } from './scripts/events/EventHandler.js';
+        new EventHandler();
+    </script>
+</body>
+</html>
