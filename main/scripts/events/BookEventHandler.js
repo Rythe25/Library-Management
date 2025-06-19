@@ -4,7 +4,9 @@ export class BookEventHandler {
   constructor() {
     this.bookManager = BookManager.getInstance();
     this.books = this.bookManager.getAllBooks();
-    this.loadBookTableData();
+  }
+
+  initializeBookEvent(){
     this.initBookEvent();
     this.initAddBookEvent();
     this.initEditBookEvent();

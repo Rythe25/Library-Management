@@ -6,7 +6,9 @@ export class CardEventHandler{
         this.cardManager = CardManager.getInstance();
         this.bookManager = BookManager.getInstance();
         this.cards = this.cardManager.getAllCards();
-        this.loadCardTableData();
+    }
+
+    initializeCardEvent(){
         this.initCardEvent();
         this.initAddCardEvent();
         this.initReturnBookEvent();

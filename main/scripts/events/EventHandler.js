@@ -19,20 +19,31 @@ export class EventHandler {
     // console.log("Current page:", currentPage);
 
     switch (true) {
-      case currentPage.includes("index.html") || currentPage === "/" || currentPage === "":
+      case currentPage.includes("index.html"):
         // console.log("Initializing BookEventHandler...");
         this.loadBookData();
+        const bookEventHandler = new BookEventHandler();
+        bookEventHandler.initializeBookEvent();
+        bookEventHandler.loadBookTableData();
         break;
       case currentPage.includes("visitor.html"):
         // console.log("Initializing VisitorEventHandler...");
         this.loadVisitorData();
+        const visitorEventHandler = new VisitorEventHandler();
+        visitorEventHandler.initializeVisitorEvent();
+        visitorEventHandler.loadVisitorTableData();
         break;
       case currentPage.includes("card.html"):
         // console.log("Initializing CardEventHandler...");
         this.loadCardData();
+        const cardEventHandler = new CardEventHandler();
+        cardEventHandler.initializeCardEvent();
+        cardEventHandler.loadCardTableData();
         break;
       case currentPage.includes("statistic.html"):
         // console.log("Initializing StatisticHandler...");
+        this.loadVisitorData();
+        this.loadCardData();
         new StatisticEventHandler();
         break;
       default:
@@ -44,7 +55,6 @@ export class EventHandler {
   loadBookData() {
     // window.localStorage.removeItem('book'); // Clear localStorage for testing 
     const bookManager = new BookManager();
-    const bookEventHandler = new BookEventHandler();
     let storedData = JSON.parse(window.localStorage.getItem("book")) || {data: [],};
 
     if ( storedData.data.length === 0 && bookManager.getAllBooks().length === 0) {
@@ -70,15 +80,13 @@ export class EventHandler {
         )
       );
     }
-    document.addEventListener
-    bookEventHandler.loadBookTableData();
     // console.log("All Books:", bookManager.getAllBooks());
   }
 
   loadVisitorData() {
     // window.localStorage.removeItem('visitor'); // Clear localStorage for testing 
     const visitorManager = new VisitorManager();
-    const visitorEventHandler = new VisitorEventHandler();
+
     let storedData = JSON.parse(window.localStorage.getItem("visitor")) || {data: [],};
 
     if ( storedData.data.length === 0 && visitorManager.getAllVisitors().length === 0) {
@@ -92,21 +100,21 @@ export class EventHandler {
         visitorManager.addVisitor(visitor.name, visitor.phone);
       });
     }
-
-    visitorEventHandler.loadVisitorTableData();
     // console.log("All Visitors:", visitorManager.getAllVisitors());
   }
 
   loadCardData(){
     // window.localStorage.removeItem('card'); // Clear localStorage for testing 
     const cardManager = new CardManager();
-    const cardEventHandler = new CardEventHandler();
     let storedData = JSON.parse(window.localStorage.getItem("card")) || {data: [],};
 
     if ( storedData.data.length === 0 && cardManager.getAllCards().length === 0) {
       const cardsToAdd = [
         {visitorId: 2, bookId: 3, borrowDate: new Date(), returnDate: null},
         {visitorId: 1, bookId: 1, borrowDate: new Date(), returnDate: null},
+        {visitorId: 2, bookId: 1, borrowDate: new Date(), returnDate: null},
+        {visitorId: 2, bookId: 1, borrowDate: new Date(), returnDate: null},
+        {visitorId: 2, bookId: 1, borrowDate: new Date(), returnDate: null},
         {visitorId: 1, bookId: 8, borrowDate: new Date(), returnDate: null}
       ];
 
@@ -119,10 +127,7 @@ export class EventHandler {
         );
       });
     }
-
-    cardEventHandler.loadCardTableData();
     // console.log("All cards:", cardManager.getAllCards());
   }
-
-  
 }
+

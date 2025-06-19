@@ -4,7 +4,9 @@ export class VisitorEventHandler {
   constructor() {
     this.visitorManager = VisitorManager.getInstance();
     this.visitors = this.visitorManager.getAllVisitors();
-    this.loadVisitorTableData();
+  }
+
+  initializeVisitorEvent(){
     this.initVisitorEvent();
     this.initAddVisitorEvent();
     this.initEditVisitorEvent();
