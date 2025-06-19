@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/card.css">
-    <title>Cards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/visitor.css">
+    <title>Visitors</title>
 </head>
 <body>
     <div class="container">
@@ -13,8 +13,8 @@
             <h1 class="title title-color">LIBRARY</h1>
             <nav class="nav-items">
                 <a href="index.html">Books</a>
-                <a href="visitor.html">Visitors</a>
-                <a href="#">Cards</a>
+                <a href="#">Visitors</a>
+                <a href="card.html">Cards</a>
                 <a href="statistic.html">Statistics</a>
             </nav>
         </header>
@@ -23,8 +23,8 @@
             <div class="main-container">
                 <div class="main-header">
                     <div class="main-header-top">
-                        <h4 class="title-color">ALL CARDS:</h4>
-                        <button class="button-style" id="new-card-button">New Card</button>
+                        <h4 class="title-color">ALL VISITORS:</h4>
+                        <button class="button-style" id="new-visitor-button">New Visitor</button>
                     </div>
                     <hr>
                     <div class="main-header-bottom">
@@ -32,8 +32,7 @@
                             <label for="sort">Sort by: </label>
                             <select class="select-style" name="sort" id="sort-column">
                                 <option value="id">ID</option>
-                                <option value="visitorId">VisitorId</option>
-                                <option value="bookId">BookId</option>
+                                <option value="name">Name</option>
                             </select>
                             <button class="button-style" id="sort-button">Sort</button>
                         </div>
@@ -49,20 +48,18 @@
                     <table>
                         <thead>
                             <th>ID</th>
-                            <th>VisitorId</th>
-                            <th>BookId</th>
-                            <th>BorrowDate</th>
-                            <th>ReturnDate</th>
+                            <th>Name</th>
+                            <th>Phone Number</th>
+                            <th>Edit</th>
                         </thead>
-                        <tbody class="card-table-body">
+                        <tbody class="visitor-table-body">
                             <!-- <tr>
                                 <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>BorrowDate</td>
+                                <td>Visitor</td>
+                                <td>Phone Number</td>
                                 <td>
                                     <button class="edit-buttons-style">
-                                        <img class="button-icons-style" src="icon/back.png" alt="ReturnBook">
+                                        <img class="button-icons-style" src="icon/pencil.png" alt="Edit">
                                     </button>
                                 </td>
                             </tr> -->
@@ -72,14 +69,14 @@
             </div>
         </main> 
 
-        <div id="add-card-pop-up" class="pop-up">
+        <div id="add-visitor-pop-up" class="pop-up">
             <div class="pop-up-container">
-                <h1>New Card</h1>
-                <div class="pop-up-top" >
-                    <label for="VisitorId">VisitorId : </label>
-                    <input class="input-style" name="VisitorId" type="text" id="add-visitorId">
-                    <label for="BookId">BookId : </label>
-                    <input class="input-style" name="BookId" type="text" id="add-bookId">
+                <h1>New Visitor</h1>
+                <div class="pop-up-top">
+                    <label for="Name">Name : </label>
+                    <input class="input-style" name="Name" type="text" id="add-name">
+                    <label for="PhoneNumber">Phone Number : </label>
+                    <input class="input-style" name="PhoneNumber" type="text" id="add-phone">
                 </div>
                 <div class="pop-up-bottom">
                     <button class="button-style" id="add-cancel-button">Cancel</button>
@@ -87,8 +84,23 @@
                 </div>
             </div>
         </div>
-    </div>
 
+        <div id="edit-visitor-pop-up" class="pop-up">
+            <div class="pop-up-container">
+                <h1>Edit Visitor</h1>
+                <div class="pop-up-top">
+                    <label for="Name">Name : </label>
+                    <input class="input-style" name="Name" type="text" id="edit-name">
+                    <label for="PhoneNumber">Phone Number : </label>
+                    <input class="input-style" name="PhoneNumber" type="text" id="edit-phone">
+                </div>
+                <div class="pop-up-bottom">
+                    <button class="button-style" id="edit-cancel-button">Cancel</button>
+                    <button class="button-style" id="edit-confirm-button">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="module">
         import { EventHandler } from './scripts/events/EventHandler.js';
         new EventHandler();

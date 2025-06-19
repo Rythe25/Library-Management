@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module">
+        import { EventHandler } from './scripts/events/EventHandler.js';
+        new EventHandler();
+    </script>
     <title>Books</title>
 </head>
 <body>
@@ -132,9 +136,5 @@
             </div>
         </div>
     </div>
-    <script type="module">
-        import { EventHandler } from './scripts/events/EventHandler.js';
-        new EventHandler();
-    </script>
 </body>
 </html>

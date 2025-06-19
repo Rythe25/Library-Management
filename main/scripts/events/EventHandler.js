@@ -8,7 +8,7 @@ import { StatisticEventHandler } from "./StatisticEventHandler.js";
 
 export class EventHandler {
   constructor() {
-    this.initialize();
+      this.initialize();
   }
 
   initialize() {
@@ -68,7 +68,7 @@ export class EventHandler {
         )
       );
     }
-
+    document.addEventListener
     bookEventHandler.loadBookTableData();
     // console.log("All Books:", bookManager.getAllBooks());
   }
